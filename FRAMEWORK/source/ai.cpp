@@ -120,7 +120,7 @@ Node::NodePtr aiGetMoveGraph(const Board& board, BoardTiles tile, unsigned int c
 		Moves moves = boardGetValidMoves(currentNode->board);
 		Moves filteredMoves;
 		BoardTiles nextTile = currentNode->tile == PLAYER_ONE ? PLAYER_TWO : PLAYER_ONE;
-		if (nextTile == PLAYER_TWO) {
+		if (nextTile == PLAYER_TWO) { // consider adding variable that determines which player is AI
 			std::vector<double> scores;
 			for (auto const& move : moves) {
 				scores.push_back(aiScoreMove(currentNode->board, nextTile, move.second));
@@ -164,11 +164,11 @@ Node::NodePtr aiGetMoveGraph(const Board& board, BoardTiles tile, unsigned int c
 	return root;
 }
 
-void aiSegmentGraphByDepth(std::map<unsigned int, std::vector<Board>>& depths, const Node::NodePtr node, unsigned int depth, std::ostream& file) {
+void aiSegmentGraphByDepth(std::map<unsigned int, std::vector<Board>>& depths, const Node::NodePtr node, unsigned int depth) {
 	depths[depth].push_back(node->board);
 	depth++;
 	for (auto const& child : node->children) {
-		aiSegmentGraphByDepth(depths, child, depth, file);
+		aiSegmentGraphByDepth(depths, child, depth);
 	}
 }
 
@@ -179,7 +179,7 @@ void aiPrintMoveGraphToFile(const Node::NodePtr graph, const std::string& fileNa
 	}
 
 	std::map<unsigned int, std::vector<Board>> segmentedGraph;
-	aiSegmentGraphByDepth(segmentedGraph, graph, 1, file);
+	aiSegmentGraphByDepth(segmentedGraph, graph, 1);
 
 	for (unsigned int depth = 1; auto const& vector : segmentedGraph) {
 		for (auto const& board : vector.second) {

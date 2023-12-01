@@ -5,7 +5,7 @@
 
 constexpr double AI_COUNT_WEIGHT = 2;
 constexpr double AI_BLOCK_WEIGHT = 1;
-constexpr double AI_MAX_SCORE = AI_COUNT_WEIGHT * (BOARD_GOAL - 1) * 8 + AI_BLOCK_WEIGHT * (BOARD_GOAL - 1) * 8 + 1;
+constexpr double AI_MAX_SCORE = AI_COUNT_WEIGHT * ((double)BOARD_GOAL - 1) * 8 + AI_BLOCK_WEIGHT * ((double)BOARD_GOAL - 1) * 8 + 1;
 
 struct Node {
 	using NodePtr = std::shared_ptr<Node>;
