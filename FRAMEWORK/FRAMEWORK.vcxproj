@@ -129,14 +129,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\ai.cpp" />
     <ClCompile Include="source\board.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="includes\ai.h" />
-    <ClInclude Include="includes\board.h" />
-    <ClInclude Include="includes\ai_maths.h" />
+    <ClInclude Include="source\ai\ai.h" />
+    <ClInclude Include="source\board\board.h" />
+    <ClInclude Include="source\ai\ai_maths.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,4 @@
-#include "../includes/board.h"
+#include "board/board.h"
 
 #include <iostream>
 #include <cassert>

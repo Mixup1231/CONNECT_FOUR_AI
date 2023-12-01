@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\board.cpp">
@@ -26,13 +26,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="includes\board.h">
+    <ClInclude Include="source\board\board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="includes\ai.h">
+    <ClInclude Include="source\ai\ai.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="includes\ai_maths.h">
+    <ClInclude Include="source\ai\ai_maths.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

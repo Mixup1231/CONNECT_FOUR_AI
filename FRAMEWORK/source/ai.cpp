@@ -1,5 +1,5 @@
-#include "../includes/ai.h"
-#include "../includes/ai_maths.h"
+#include "ai/ai.h"
+#include "ai/ai_maths.h"
 
 #include <fstream>
 #include <queue>
